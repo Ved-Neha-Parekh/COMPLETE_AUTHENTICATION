@@ -1,0 +1,18 @@
+import env from "dotenv";
+
+env.config();
+
+if (!process.env.PORT) {
+    throw new Error("PORT is not defined in the environment variables.");
+}
+
+if(!process.env.MONGODB_URI){
+    throw new Error("MONGODB_URI is not defined in the environment variables.");
+}
+
+const dotenv = {
+    PORT : process.env.PORT,
+    MONGODB_URI : process.env.MONGODB_URI,
+}
+
+export default dotenv;
